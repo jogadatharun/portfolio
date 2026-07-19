@@ -52,11 +52,13 @@ const Projects = () => {
             transition={{ duration: 0.5, delay: index * 0.2 }}
             viewport={{ once: true }}
           >
-            <h3>{project.title}</h3>
+            <div className="project-content">
+              <h3>{project.title}</h3>
 
-            <span>{project.tech}</span>
+              <span>{project.tech}</span>
 
-            <p>{project.description}</p>
+              <p>{project.description}</p>
+            </div>
 
             <div className="project-buttons">
               <a
@@ -72,8 +74,9 @@ const Projects = () => {
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="live-btn"
                 >
-                  <FaExternalLinkAlt /> Live Demo
+                  <FaExternalLinkAlt /> Live
                 </a>
               )}
             </div>
