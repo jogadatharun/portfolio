@@ -7,44 +7,50 @@ const projects = [
     title: "Bank Management System",
     tech: "Java • JDBC • MySQL",
     description:
-      "A banking application with account creation, deposits, withdrawals, balance enquiry, and transaction history.",
-    github: "https://github.com/yourusername/bank-management-system",
-    live: "#",
+      "Developed a banking application using Java, JDBC, and MySQL. It supports account creation, deposits, withdrawals, balance enquiry, and transaction history with a layered architecture.",
+    github:
+      "https://github.com/jogadatharun/Bank_Management_System_By_Using_JDBC",
+    live: "",
   },
   {
-    title: "CourseCraft",
+    title: "CourseCraft - AI Based Smart Curriculum Selector",
     tech: "React • Node.js • SQL",
     description:
-      "AI-based curriculum recommendation platform that suggests personalized learning paths based on user interests.",
+      "An AI-powered curriculum recommendation platform that generates personalized learning paths based on users' skills, interests, and career goals.",
     github:
       "https://github.com/jogadatharun/CourseCraft-AI-Based-Smart-Curriculum-Selector",
-    live: "#",
+    live: "",
   },
   {
-    title: "React Todo App",
-    tech: "React • JavaScript",
+    title: "Portfolio Website",
+    tech: "React • Vite • CSS",
     description:
-      "Task management application with add, delete, edit, and complete task features.",
-    github: "https://github.com/yourusername/react-todo",
-    live: "#",
+      "A responsive personal portfolio website showcasing my skills, projects, resume, and contact information with smooth animations and a modern UI.",
+    github: "https://github.com/jogadatharun/portfolio",
+    live: "https://portfolio-dun-nine-cb2voiyszj.vercel.app/",
   },
 ];
 
 const Projects = () => {
   return (
     <section id="projects" className="projects">
-      <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+      <motion.h2
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         My Projects
       </motion.h2>
 
       <div className="projects-container">
         {projects.map((project, index) => (
           <motion.div
-            className="project-card"
             key={index}
+            className="project-card"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+            viewport={{ once: true }}
           >
             <h3>{project.title}</h3>
 
@@ -53,13 +59,23 @@ const Projects = () => {
             <p>{project.description}</p>
 
             <div className="project-buttons">
-              <a href={project.github} target="_blank" rel="noreferrer">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaGithub /> GitHub
               </a>
 
-              <a href={project.live} target="_blank" rel="noreferrer">
-                <FaExternalLinkAlt /> Live Demo
-              </a>
+              {project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaExternalLinkAlt /> Live Demo
+                </a>
+              )}
             </div>
           </motion.div>
         ))}
