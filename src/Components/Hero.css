@@ -1,0 +1,177 @@
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 10%;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero h3 {
+  font-size: 22px;
+  color: #cbd5e1;
+}
+
+.hero h1 {
+  font-size: 60px;
+  color: #38bdf8;
+  margin: 15px 0;
+}
+
+.hero h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.hero p {
+  line-height: 1.8;
+  color: #d1d5db;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background: #38bdf8;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #0284c7;
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #38bdf8;
+}
+
+.btn-outline:hover {
+  background: #38bdf8;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 28px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #38bdf8;
+  transform: scale(1.2);
+}
+
+/* ===== Profile Image ===== */
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 360px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 20px; /* Square with rounded corners */
+  border: 5px solid #38bdf8;
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.45);
+  transition: 0.4s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 45px rgba(56, 189, 248, 0.7);
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 120px 30px 60px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .hero-image img {
+    width: 300px;
+    height: 350px;
+    margin-bottom: 30px;
+  }
+
+  .hero h1 {
+    font-size: 46px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-image img {
+    width: 250px;
+    height: 300px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero h2 {
+    font-size: 20px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+}
