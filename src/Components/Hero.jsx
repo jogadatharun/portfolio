@@ -41,7 +41,7 @@ const Hero = () => {
         </motion.p>
 
         <div className="hero-buttons">
-          <a href="/resume.pdf" download className="btn">
+          <a href="/Jogada_Tharun_Resume.pdf" download className="btn">
             <FaDownload />
             Download Resume
           </a>
